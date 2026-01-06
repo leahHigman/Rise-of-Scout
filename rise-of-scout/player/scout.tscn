@@ -1,7 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://co35dgc0nfxwc"]
+[gd_scene load_steps=11 format=3 uid="uid://co35dgc0nfxwc"]
 
 [ext_resource type="Script" uid="uid://b70yijjbwsxtl" path="res://player/scout.gd" id="1_o72n1"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_qukyk"]
+[ext_resource type="Script" uid="uid://d2wustfg614sn" path="res://player/state_machine.gd" id="3_8hw7u"]
+[ext_resource type="Script" uid="uid://c8m8w85cew0lw" path="res://player/states/player_state.gd" id="4_k5ci1"]
+[ext_resource type="Script" uid="uid://ic62giesqs5j" path="res://player/states/idle.gd" id="5_fuk5g"]
+[ext_resource type="Script" uid="uid://blq23sosbdd10" path="res://player/states/running.gd" id="6_0i82m"]
+[ext_resource type="Script" uid="uid://b3igmyktqios2" path="res://player/states/jumping.gd" id="7_hh671"]
+[ext_resource type="Script" uid="uid://bn375xtqouw63" path="res://player/states/falling.gd" id="8_vyqrl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_37kl0"]
 animations = [{
@@ -28,3 +34,19 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6uqi0")
 
 [node name="stateMachine" type="Node" parent="."]
+script = ExtResource("3_8hw7u")
+
+[node name="Idle" type="Node" parent="stateMachine"]
+script = ExtResource("5_fuk5g")
+
+[node name="playerState" type="Node" parent="stateMachine"]
+script = ExtResource("4_k5ci1")
+
+[node name="Running" type="Node" parent="stateMachine"]
+script = ExtResource("6_0i82m")
+
+[node name="Jumping" type="Node" parent="stateMachine"]
+script = ExtResource("7_hh671")
+
+[node name="Falling" type="Node" parent="stateMachine"]
+script = ExtResource("8_vyqrl")

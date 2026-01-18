@@ -22,19 +22,3 @@ shape = SubResource("RectangleShape2D_8uh7m")
 
 [node name="Scout" parent="." instance=ExtResource("2_8uh7m")]
 position = Vector2(454, 455)
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(953, 325)
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-self_modulate = Color(0.23, 0.16352999, 0.11270001, 1)
-scale = Vector2(6.9843755, 0.5390625)
-texture = ExtResource("1_37kl0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-0.5, -1)
-shape = SubResource("RectangleShape2D_8uh7m")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(362, 520)
-target_position = Vector2(0, -256)

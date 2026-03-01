@@ -3,7 +3,6 @@ extends PlayerState
 func enter(previous_state_path: String, data := {}) -> void:
 	#player.animation_player.play("fall")
 	#dplayer.velocity.y = 0
-	
 	pass
 
 func physics_update(delta: float) -> void:
@@ -11,6 +10,9 @@ func physics_update(delta: float) -> void:
 	player.velocity.x = player.speed * input_direction_x
 	player.velocity.y += player.fall_gravity * delta
 	player.move_and_slide()
+	
+	
+
 
 	if player.is_on_floor():
 		if is_equal_approx(input_direction_x, 0.0):

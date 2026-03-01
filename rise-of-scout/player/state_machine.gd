@@ -24,6 +24,12 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	var collision = player.get_slide_collision(0)
+	if collision:
+		var collider = collision.get_collider()
+		if collider is Bubble:
+			var bounceStrength = collider.strength
+			bounce(bounceStrength)
 	state.physics_update(delta)
 
 

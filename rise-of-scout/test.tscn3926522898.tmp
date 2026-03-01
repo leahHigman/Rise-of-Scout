@@ -37,11 +37,11 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_8uh7m")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1362329091]
-position = Vector2(140, 519)
+position = Vector2(362, 520)
 target_position = Vector2(0, -256)
 
 [node name="Bubble" type="RigidBody2D" parent="." unique_id=1737619582]
-position = Vector2(417, 446)
+position = Vector2(560, 397)
 contact_monitor = true
 max_contacts_reported = 10
 linear_velocity = Vector2(0, 50)
@@ -51,6 +51,4 @@ script = ExtResource("3_6uqi0")
 shape = SubResource("CircleShape2D_8uh7m")
 
 [node name="player" parent="." unique_id=1057030537 instance=ExtResource("3_ppyta")]
-position = Vector2(413, 237)
-
-[connection signal="body_entered" from="Bubble" to="Bubble" method="_on_body_entered"]
+position = Vector2(406, 451)

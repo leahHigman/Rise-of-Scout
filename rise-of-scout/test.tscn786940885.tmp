@@ -52,5 +52,3 @@ shape = SubResource("CircleShape2D_8uh7m")
 
 [node name="player" parent="." unique_id=1057030537 instance=ExtResource("3_ppyta")]
 position = Vector2(413, 237)
-
-[connection signal="body_entered" from="Bubble" to="Bubble" method="_on_body_entered"]

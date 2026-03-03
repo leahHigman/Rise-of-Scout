@@ -8,14 +8,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var colliders = get_colliding_bodies()
-	if colliders:
-		#print(colliders[0].get_name())
-		pass
-	pass
-
-
-func _on_body_entered(body: Node) -> void: #I believe this does not work
-	print("test")
+func bounce(player):
+	var bounceAngle = get_angle_to(player.position)
+	print(rad_to_deg(bounceAngle))
+	var test = Vector2(1,0).rotated(bounceAngle) * 2000
+	player.velocity += test
+	
